@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title></title>
+    <link rel='stylesheet' href='/css/style.css' />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type ="text/javascript">
+        $(document).ready(function (){
+
+            var socket = io.connect();
+        })
+
+
+    </script>
+
+
+</head>
+<body>
+
+    <div id='main_wrapper'>
+        <nav>
+            <h3><a href='/' id='back'>Go back</a></h3>
+
+
+
+        </nav>
+
+        <div id='quotes_div'>
+            <ul>
+                <% for (var x in quotes) { %>
+                    <li>Name:<%= quotes[x].name %></li>
+                    <li>Quote: <%= quotes[x].quote %></li>
+                    <li><%= quotes[x].created_at %></li>
+                    <li>Likes: <%= quotes[x].upvotes %> </li>
+                    <a href='/upvote/<%= quotes[x]._id %>'>Upvote</a>
+                    <a href='/delete/<%= quotes[x]._id %>'>Delete</a>
+                <% } %>
+            </ul>
+        </div>
+
+
+
+
+    </div>
+
+</body>
+</html>
