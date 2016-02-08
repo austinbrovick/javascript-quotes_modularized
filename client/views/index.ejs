@@ -1,14 +1,20 @@
 <html>
 <head>
- <title></title>
+<title></title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
- <h3>Add a Quote!</h3>
- <form class='form' action='/quotes' method='post'>
-    Name: <input class='form-control' type='text' name='name'>
-    Quote! <textarea class='form-control' type='text' name='quote'></textarea>
-    <input type="submit" value="Submit">
-  <a href="/main" role="button">To the Quotes</a>
- </form>
+<div id='main_wrapper'>
+    <div id='add_quote_wrapper'>
+        <h3>Add a Quote!</h3>
+
+        <form class='form' action='/quotes' method='post'>
+            Name: <input class='form-control' type='text' name='name'>
+            Quote! <textarea class='form-control' type='text' name='quote'></textarea>
+            <input type="submit" value="Submit">
+            <a href="/main" role="button">To the Quotes</a>
+        </form>
+    </div>
+</div>
 </body>
 </html>
